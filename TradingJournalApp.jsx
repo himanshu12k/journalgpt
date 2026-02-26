@@ -210,7 +210,7 @@ input,select,textarea,button{border-radius:2px}
         </aside>
 
         <main className="md:ml-[220px] p-6 md:p-10 w-full overflow-auto">
-          {notif && <div className={`mb-3 ${notif.includes('⚠') ? 'text-[var(--red)]' : 'text-[var(--green)]`}>{notif}</div>}
+          {notif && <div className={`mb-3 ${notif.includes('⚠') ? 'text-[var(--red)]' : 'text-[var(--green)]'}`}>{notif}</div>}
 
           {tab === 'Dashboard' && <div>
             <h2 className="uppercase tracking-[3px] mb-4">⟩ DASHBOARD</h2>
