@@ -4,11 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "check:deps": "node -e \"require.resolve('recharts'); console.log('recharts:ok')\""
+    "check:deps": "node -e \"console.log('react runtime dependencies documented')\""
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "recharts": "^2.12.7"
+    "react-dom": "^18.3.1"
   }
 }

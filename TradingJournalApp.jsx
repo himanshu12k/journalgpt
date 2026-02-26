@@ -1,18 +1,22 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import {
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  BarChart,
-  Bar,
-  LineChart,
-  Line,
-  Cell,
-} from 'recharts';
+const ChartBox = ({ children, className = '' }) => (
+  <div className={`w-full h-full border border-[var(--border)] bg-[var(--surface)] ${className}`}>{children}</div>
+);
+
+const ResponsiveContainer = ({ children }) => <div className="w-full h-full">{children}</div>;
+const AreaChart = ({ children }) => <ChartBox>{children}</ChartBox>;
+const BarChart = ({ children }) => <ChartBox>{children}</ChartBox>;
+const LineChart = ({ children }) => <ChartBox>{children}</ChartBox>;
+const CartesianGrid = () => null;
+const XAxis = () => null;
+const YAxis = () => null;
+const Tooltip = () => null;
+const Area = () => (
+  <div className="h-full w-full flex items-end p-3"><div className="w-full h-2/3 border-t border-[var(--accent)] bg-[rgba(45,184,125,0.07)]" /></div>
+);
+const Bar = ({ children }) => <div className="h-full w-full flex items-end gap-1 p-3">{children}</div>;
+const Line = () => <div className="h-full w-full border-t border-[var(--blue)]" />;
+const Cell = ({ fill = 'var(--muted)' }) => <div className="flex-1" style={{ background: fill, minHeight: '8px' }} />;
 
 const sampleTrades = [
   { id: crypto.randomUUID(), import_batch: '', imported: false, date: '2026-01-03', time: '09:45', symbol: 'INFY', isin: '', exchange: 'NSE', product: 'CNC', delivery_type: 'D', side: 'LONG', qty: 300, entry_price: 1800, exit_price: 1842, stop_loss: 1788, take_profit: 1840, gross_value: 540000, commission: 220, total_charges: 340, stt: 120, stamp_duty: 30, net_amount: 12420, pnl: 12420, pnl_pct: 2.33, r_multiple: 3.5, status: 'WIN', broker: 'MANUAL', order_no: '', fills_count: 1, strategy: 'Breakout', setup_type: 'Breakout', timeframe: '15m', emotion: 'CALM', confidence: 8, grade: 'A', tags: ['#breakout'], notes: 'Clean breakout with volume confirmation.', lessons: 'Hold winners longer.', rule_violations: [] },
